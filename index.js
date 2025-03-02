@@ -1,12 +1,13 @@
-import StaticArray from "./arrays/StaticArray";
-import getFunctionType from "./types/getFunctionType";
-import getTypeName from "./types/getTypeName";
-import TYPE_DEFAULTS from "./types/constants/TYPE_DEFAULTS";
-import TYPE_NAMES from "./types/constants/TYPE_NAMES";
-import assertAnyTypeName from "./types/validation/assertAnyTypeName";
-import checkByTypeName from "./types/validation/checkByTypeName";
-import failByTypeName from "./types/validation/failByTypeName";
-import passByTypeName from "./types/validation/passByTypeName";
+import StaticArray from "./arrays/StaticArray.js";
+import StaticArray from "./objects/StaticObject.js";
+import getFunctionType from "./types/getFunctionType.js";
+import getTypeName from "./types/getTypeName.js";
+import TYPE_DEFAULTS from "./types/constants/TYPE_DEFAULTS.js";
+import TYPE_NAMES from "./types/constants/TYPE_NAMES.js";
+import assertAnyTypeName from "./types/validation/assertAnyTypeName.js";
+import checkByTypeName from "./types/validation/checkByTypeName.js";
+import failByTypeName from "./types/validation/failByTypeName.js";
+import passByTypeName from "./types/validation/passByTypeName.js";
 
 export default {
   StaticArray,

@@ -1,4 +1,4 @@
-import checkByTypeName from "./checkByTypeName";
+import checkByTypeName from "./checkByTypeName.js";
 
 /**
  * Ensures that the given value matches at least one of the specified type names.

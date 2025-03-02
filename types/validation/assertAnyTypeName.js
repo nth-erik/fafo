@@ -1,4 +1,4 @@
-import TYPE_NAMES from "../constants/TYPE_NAMES";
+import TYPE_NAMES from "../constants/TYPE_NAMES.js";
 
 /**
  * Asserts that the given type names are recognized as standard types.

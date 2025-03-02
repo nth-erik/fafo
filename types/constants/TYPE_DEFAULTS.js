@@ -1,4 +1,4 @@
-import StaticArray from "../../arrays/StaticArray";
+import StaticArray from "../../arrays/StaticArray.js";
 
 const TYPE_DEFAULTS = new StaticArray(
   0n,

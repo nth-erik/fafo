@@ -1,4 +1,4 @@
-import getFunctionType from "./getFunctionType";
+import getFunctionType from "./getFunctionType.js";
 
 /**
  * Returns the type names of the provided sample values.

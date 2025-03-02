@@ -1,4 +1,4 @@
-import assertAnyTypeName from "./assertAnyTypeName";
+import assertAnyTypeName from "./assertAnyTypeName.js";
 
 /**
  * Checks if the type of the given value matches any of the specified type names.

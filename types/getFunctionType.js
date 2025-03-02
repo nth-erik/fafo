@@ -8,6 +8,7 @@
  *      - Returns `'function'` otherwise.
  * @returns {string} The determined function type or its exact string representation.
  * @throws {TypeError} If `sample` is not a function.
+ * @note Unknown function types fall back to `'exact'` mode.
  */
 const getFunctionType = (sample, functionCheckMode) => {
   if (typeof sample !== 'function') sample();
@@ -15,12 +16,12 @@ const getFunctionType = (sample, functionCheckMode) => {
   switch (functionCheckMode) {
     case 'form':
       const str = sample.toString();
+
       if (str.startsWith('class')) return 'function:class';
-      if (!sample.hasOwnProperty('prototype') && str.indexOf('=>') < str.indexOf('{')) return 'function:lambda';
-      if (str.startsWith('function')) return str.startsWith('function bound') ? 'function:binding' : 'function:bound';
-      console.warn('Unknown function type. Falling back to \'exact\' mode.');
+      if (str.startsWith('function')) return str.startsWith('function bound') ? 'function:regular' : 'function:bound';
+      if (!Object.hasOwn(sample, 'prototype')) return Object.hasOwn(sample, 'name') ? 'function:method' : 'function:lambda';
     case 'exact':
-      return sample.toString().replace(/\s+/gm, '');
+      return sample.toString().replace(/(\r?\n)\s+/gm, '$1').replace(/\s+/g, ' ');
     default:
       return 'function';
   }

@@ -1,3 +1,5 @@
+import StaticObject from "../objects/StaticObject.js";
+
 /**
  * Represents an immutable, fixed-length array-like structure.
  * 
@@ -13,10 +15,9 @@
  * console.log(arr[0]); // 1
  * console.log([...arr]); // [1, 2, 3]
  * 
- * @throws {TypeError} If an argument is a function or a non-StaticArray object.
+ * @throws {TypeError} If an object argument is not a StaticArray and not serializable.
  * 
- * @param {...(number|string|boolean|StaticArray)} values - The elements of the StaticArray.
- * Primitive types and other StaticArray instances are allowed.
+ * @param {...*} values - The elements of the StaticArray.
  * 
  * @property {number} length - The fixed length of the StaticArray (read-only).
  * 
@@ -39,6 +40,8 @@
  * @yields {*} The next value in the StaticArray.
  * 
  * @note The StaticArray instance and its contents are deeply immutable.
+ * @note Objects are converted to StaticObject unless StaticArray.
+ * @note Functions lose their binding in StaticArray.
  */
 class StaticArray {
   constructor() {
@@ -53,9 +56,15 @@ class StaticArray {
       }
     );
 
-    arguments.forEach((value, index) => {
-      if (typeof value === 'object' && !(value instanceof StaticArray)) throw TypeError('StaticArray can only handle StaticArray sub-objects.');
-      if (typeof value === 'function') throw TypeError('StaticArray cannot handle functions.');
+    Array.from(arguments).forEach((value, index) => {
+      if (typeof value === 'object' && !(value instanceof StaticArray)) {
+        return new StaticObject(value);
+      }
+
+      if (typeof value === 'function') {
+        return eval(`(${value.toString()})`);
+      };
+
       Object.defineProperty(this, index, {
         value,
         writable: false,
