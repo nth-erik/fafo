@@ -22,13 +22,13 @@
     "input validation",
     "javascript",
     "lightweight",
+    "low dependency",
     "runtime validation",
     "schema validation",
     "type checking",
     "type enforcement",
     "utility",
-    "vanilla js",
-    "zero-dependency"
+    "vanilla js"
   ],
   "author": "Erik Achilles Németh",
   "license": "MIT"

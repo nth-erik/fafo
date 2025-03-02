@@ -1,5 +1,3 @@
-import StaticArray from "./arrays/StaticArray.js";
-import StaticArray from "./objects/StaticObject.js";
 import getFunctionType from "./types/getFunctionType.js";
 import getTypeName from "./types/getTypeName.js";
 import TYPE_DEFAULTS from "./types/constants/TYPE_DEFAULTS.js";
@@ -10,7 +8,6 @@ import failByTypeName from "./types/validation/failByTypeName.js";
 import passByTypeName from "./types/validation/passByTypeName.js";
 
 export default {
-  StaticArray,
   getFunctionType,
   getTypeName,
   TYPE_DEFAULTS,
