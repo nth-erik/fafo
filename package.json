@@ -1,0 +1,11 @@
+{
+  "name": "@nth-erik/fafo",
+  "version": "1.0.0",
+  "description": "FAFO (Functions Against Faulty Operation) is a JavaScript library for active data supervision, ensuring type integrity, schema compliance, and format correctness at the source. Built on the principle that invalid data should be detected and handled where it originates, FAFO provides robust enforcement mechanisms to maintain data reliability and prevent propagation of faulty inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik Achilles Németh",
+  "license": "MIT"
+}
