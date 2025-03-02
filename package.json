@@ -6,6 +6,29 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nth-erik/fafo.git"
+  },
+  "keywords": [
+    "data integrity",
+    "data supervision",
+    "data validation",
+    "error handling",
+    "fafo",
+    "fault tolerance",
+    "format validation",
+    "input validation",
+    "javascript",
+    "lightweight",
+    "runtime validation",
+    "schema validation",
+    "type checking",
+    "type enforcement",
+    "utility",
+    "vanilla js",
+    "zero-dependency"
+  ],
   "author": "Erik Achilles Németh",
   "license": "MIT"
 }
