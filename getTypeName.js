@@ -1,4 +1,4 @@
-import getFunctionType from "./getFunctionType.js";
+import getFunctionType from './getFunctionType.js';
 
 /**
  * Returns the type names of the provided sample values.
@@ -14,16 +14,18 @@ import getFunctionType from "./getFunctionType.js";
  * @returns {string[]} An array of type names corresponding to the input values.
  *
  * @example
- * getTypeName(42, 'hello', null, NaN, {}, []) 
+ * getTypeName(42, 'hello', null, NaN, {}, [])
  * // Returns: ['number', 'string', 'null', 'nan', 'object', 'object']
  */
-const getTypeName = (typeSamples, functionCheckMode) => typeSamples.map((sample) => {
-  if (Number.isNaN(sample)) return 'nan';
-  if (sample === null) return 'null';
-  const sampleTypeName = typeof sample;
-  if (sampleTypeName === 'function') return getFunctionType(sample, functionCheckMode);
+const getTypeName = (typeSamples, functionCheckMode) =>
+  typeSamples.map((sample) => {
+    if (Number.isNaN(sample)) return 'nan';
+    if (sample === null) return 'null';
+    const sampleTypeName = typeof sample;
+    if (sampleTypeName === 'function')
+      return getFunctionType(sample, functionCheckMode);
 
-  return sampleTypeName;
-});
+    return sampleTypeName;
+  });
 
 export default getTypeName;

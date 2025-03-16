@@ -1,4 +1,4 @@
-import TYPE_NAMES from "../constants/TYPE_NAMES.js";
+import TYPE_NAMES from '../constants/TYPE_NAMES.js';
 
 /**
  * Asserts that the given type names are recognized as standard types.
@@ -9,8 +9,11 @@ import TYPE_NAMES from "../constants/TYPE_NAMES.js";
  */
 const assertAnyTypeName = (...typeNames) => {
   typeNames.forEach((typeName) => {
-    if (!TYPE_NAMES.includes(typeName)) throw TypeError(typeName + ' is not a recognized type name: ' + TYPE_NAMES.toString());
+    if (!TYPE_NAMES.includes(typeName))
+      throw TypeError(
+        typeName + ' is not a recognized type name: ' + TYPE_NAMES.toString(),
+      );
   });
-}
+};
 
 export default assertAnyTypeName;

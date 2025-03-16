@@ -1,4 +1,4 @@
-import checkByTypeName from "./checkByTypeName.js";
+import checkByTypeName from './checkByTypeName.js';
 
 /**
  * Ensures that the given value matches at least one of the specified type names.
@@ -17,6 +17,6 @@ const passByTypeName = (value, ...typeNames) => {
 
   if (checkByTypeName(value, ...typeNames)) return value;
   else throw TypeError(valueType + ' is not of type ' + typeNames.toString());
-}
+};
 
 export default passByTypeName;

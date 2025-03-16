@@ -18,10 +18,19 @@ const getFunctionType = (sample, functionCheckMode) => {
       const str = sample.toString();
 
       if (str.startsWith('class')) return 'function:class';
-      if (str.startsWith('function')) return str.startsWith('function bound') ? 'function:regular' : 'function:bound';
-      if (!Object.hasOwn(sample, 'prototype')) return Object.hasOwn(sample, 'name') ? 'function:method' : 'function:lambda';
+      if (str.startsWith('function'))
+        return str.startsWith('function bound')
+          ? 'function:regular'
+          : 'function:bound';
+      if (!Object.hasOwn(sample, 'prototype'))
+        return Object.hasOwn(sample, 'name')
+          ? 'function:method'
+          : 'function:lambda';
     case 'exact':
-      return sample.toString().replace(/(\r?\n)\s+/gm, '$1').replace(/\s+/g, ' ');
+      return sample
+        .toString()
+        .replace(/(\r?\n)\s+/gm, '$1')
+        .replace(/\s+/g, ' ');
     default:
       return 'function';
   }

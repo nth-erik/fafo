@@ -31,5 +31,8 @@
     "vanilla js"
   ],
   "author": "Erik Achilles Németh",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@nth-erik/stoic": "^1.0.0"
+  }
 }
